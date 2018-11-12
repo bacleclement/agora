@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Articles", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Schools", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -39,7 +39,11 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Articles", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Schools", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to (new_user_session_path) do %>
+        <p class="navbar-wagon-item navbar-wagon-link become-citizen"><%= image_tag "citizen.png", height: 30, class: "navbar-wagon-item navbar-wagon-link" %> <strong>Become a citizen</strong></p>
+      <% end %>
     <% end %>
   </div>
 
@@ -48,9 +52,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Schools</a></li>
+        <li><a href="#">Become citizen</a></li>
       </ul>
     </div>
   </div>
