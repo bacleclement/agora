@@ -1,3 +1,3 @@
 class School < ApplicationRecord
-  as_many :profiles
+  has_many :profiles
 end
