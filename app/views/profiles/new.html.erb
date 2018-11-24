@@ -1,2 +1,19 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="card-form card-device text-center">
+      <h1>Profiles</h1>
+      <%= simple_form_for [@profile] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :username, class: "title-label" %>
+        <%= f.input :age, class: "title-label" %>
+        <%= f.input :sexe, class: "title-label" %>
+        <%= f.input :city, class: "title-label" %>
+        <%= f.input :school, class: "title-label" %>
+        <%= f.input :role, class: "title-label" %>
+        <%= f.input :grade, class: "title-label" %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
