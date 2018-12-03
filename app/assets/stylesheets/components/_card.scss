@@ -116,6 +116,27 @@ $wizard: #4FACFF;
   color: white;
 }
 
+.bottom-card {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 85px;
+}
+
+.profile-list {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.profile-item {
+  flex: 1 1 33%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
 .big-card:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }

@@ -87,19 +87,38 @@
     <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">School Members</div>
     <div class="big-card">
       <div class="top-card">
-        <h4 class="top-card-title"><%= @array.size - 1 %> members</h4>
+        <h4 class="top-card-title">
+          <strong> <%= @array.size %> </strong>
+          <% if @array.size <= 1 %>
+          member
+          <% else %>
+          members
+          <% end %>
+        </h4>
       </div>
       <div class="bottom-card">
-        <%= @array %>
+          <div class="profile-list">
+            <div class="profile-item"><strong>Username</strong></div>
+            <div class="profile-item"><strong>Grade</strong></div>
+            <div class="profile-item"><strong>Role</strong></div>
+          </div>
+        <% @array.each do |profile| %>
+          <div class="profile-list">
+            <div class="profile-item"><%= profile[0].capitalize %></div>
+            <div class="profile-item"><%= profile[1].capitalize %></div>
+            <div class="profile-item"><%= profile[2].capitalize %></div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
+    <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">School Library</div>
     <div class="big-card">
       <div class="top-card">
-        <p>School's library</p><br>
+
       </div>
       <div class="bottom-card">
       </div>

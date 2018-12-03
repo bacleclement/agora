@@ -8,7 +8,7 @@ class SchoolsController < ApplicationController
     @array = []
     p.each do |e|
       if e.school_id == @school.id
-        @array << [e.username, e.grade]
+        @array << [e.username, e.grade, e.role]
       end
     end
     @master = []
