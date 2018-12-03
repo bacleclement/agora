@@ -1,2 +1,110 @@
-<h1>Schools#show</h1>
-<p>Find me in app/views/schools/show.html.erb</p>
+<div class="container">
+  <div class="row">
+      <div class="banner-school col-xs-12">
+        <div class="title-school">
+          <h3><%= @school.title %></h3>
+          <p>Commun Room</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="clash-card__unit-name text-center" style="color: white;">Hall of fame</div>
+    <div class="row">
+      <% @master.each do |e| %>
+        <div class="col-xs-12">
+          <%= render 'shared/clash_card_goblin', e: e %>
+        </div>
+      <% end %>
+    </div>
+</div> <!-- end container -->
+<div class="container">
+    <div class="row">
+      <% @teachers.each do |e| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <% if e.role == "Rhetor" %>
+            <%= render 'shared/clash_card_goblin_small', e: e %>
+          <% elsif e.role == "Governor" %>
+            <%= render 'shared/clash_card_barbarian_small', e: e %>
+          <% elsif e.role == "Priest" %>
+            <%= render 'shared/clash_card_wizard_small', e: e %>
+          <% else %>
+            <%= render 'shared/clash_card_archer_small', e: e %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">School details</div>
+    <div class="col-sm-12 col-md-6">
+      <div class="clash-card-description archer">
+        <div class="clash-card__image_description clash-card__image--archer"></div>
+        <div class="clash-card__unit-name">School's description</div>
+        <div class="clash-card__unit-description">
+          <%= @school.description %>
+        </div>
+      </div> <!-- end clash-card archer-->
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="clash-card-description archer">
+        <div class="clash-card__image clash-card__image--archer">
+        </div>
+        <div class="clash-card__unit-name">School's score</div>
+        <div class="clash-card__unit-description">
+          All your sucess is display here! <br> To win xp for your school: post questions, post responses, file your bio, invit friend to join your school...
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
+          <div class="one-third">
+            <div class="stat">2/4</div>
+            <div class="stat-value">Position</div>
+          </div>
+
+          <div class="one-third">
+            <div class="stat"><%= @school.score %></div>
+            <div class="stat-value">Xp</div>
+          </div>
+
+          <div class="one-third no-border">
+            <div class="stat">143</div>
+            <div class="stat-value">Responses</div>
+          </div>
+        </div>
+      </div> <!-- end clash-card archer-->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">School Members</div>
+    <div class="big-card">
+      <div class="top-card">
+        <h4 class="top-card-title"><%= @array.size - 1 %> members</h4>
+      </div>
+      <div class="bottom-card">
+        <%= @array %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="big-card">
+      <div class="top-card">
+        <p>School's library</p><br>
+      </div>
+      <div class="bottom-card">
+      </div>
+    </div>
+  </div>
+</div>
+
+

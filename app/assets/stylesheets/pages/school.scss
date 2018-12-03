@@ -1,0 +1,40 @@
+.banner-school {
+  display: flex;
+}
+
+.logo_school {
+  align-content: flex-start;
+  margin: 20px;
+}
+
+.title-school {
+  align-content: flex-end;
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+  color: white;
+  p {
+    font-size: 18px;
+    text-opacity: 60%;
+  }
+}
+
+.master-frame {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.teacher-frame {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.sofa {
+  margin-left: 20px
+}
+
+.big-sofa {
+  margin-right: 120px;
+  padding-top: 30px;
+}

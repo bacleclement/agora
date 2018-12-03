@@ -1,0 +1,30 @@
+
+  <div class="clash-card barbarian">
+    <div class="clash-card__image clash-card__image--barbarian">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
+    </div>
+    <div class="clash-card__level clash-card__level--barbarian">Level 120 / 120</div>
+    <div class="clash-card__unit-name"><%= e.grade.capitalize %> <%= e.username.capitalize %></div>
+    <div class="clash-card__unit-description">
+      <!-- Future feature : change this text below with profile.bio -->
+      Luc is an absolute believer of knowledge power. Born in the city of Stagira, he loves debate to share his wisdom.
+    </div>
+
+    <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+      <div class="one-third">
+        <div class="stat"><%= e.role %></div>
+        <div class="stat-value">Role</div>
+      </div>
+
+      <div class="one-third">
+        <div class="stat">26550</div>
+        <div class="stat-value">Xp</div>
+      </div>
+
+      <div class="one-third no-border">
+        <div class="stat">143</div>
+        <div class="stat-value">Responses</div>
+      </div>
+    </div>
+  </div> <!-- end clash-card barbarian-->
+

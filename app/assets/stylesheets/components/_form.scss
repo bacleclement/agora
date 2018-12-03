@@ -23,19 +23,6 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.link {
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  color: #619BA6;
-  &.left {
-    left: 10px;
-    right: 230px;
-  }
-}
-
 .link:hover {
   color: #FFF;
 }
@@ -46,10 +33,12 @@
   width: 200px;
 }
 
-.field {
-  border-radius: 2px;
-  border: 0px black solid;
-  width: 200px;
+.form-control {
+  margin-left: 100px;
+}
+
+.form-check {
+  margin-left: 100px;
 }
 
 .check_box {
@@ -58,83 +47,6 @@
   display: flex;
   padding-left: 105px;
 }
-
-#user_remember_me {
-  margin-right: -200px;
-}
-
-#next:hover {
-  background-color: rgba(1, 162, 166, 0.7)!important;
-  color: #fff;
-}
-
-#back:hover {
-  background-color: rgba(255, 65, 54, 0.7)!important;
-  color: #fff;
-}
-
-/*form styles*/
-#msform {
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  max-width: 100%;
-}
-
-#msform fieldset {
-  max-height: 100%;
-  overflow: scroll;
-  background: white;
-  border: 0 none;
-  border-radius: 3px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-  padding: 20px 30px;
-  box-sizing: border-box;
-
-  /*stacking fieldsets above each other*/
-  position: relative;
-}
-
-fieldset select {
-  width: 80%;
-  text-align: center;
-  background-color: #EDEDED;
-  height: 350px;
-  &#thought_check_situation {
-    background-color: #EDEDED;
-    height: 350px;
-  }
-  &#thought_check_about {
-    height: 350px;
-    border: 0px;
-  }
-  &#thought_check_thought {
-    height: 350px;
-    border: 0px;
-  }
-  &#thought_check_emotion {
-    height: 350px;
-    border: 0px;
-  }
-  &#thought_check_emotion_level {
-    height: 370px;
-    border: 0px;
-  }
-  &#thought_check_physiological {
-    height: 350px;
-    border: 0px;
-  }
-  & option {
-    margin: 10px;
-    padding: 3px;
-    border: 1px #619BA6 solid;
-    border-radius: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    white-space: initial;
-  }
-}
-
 .selected {
   background-color: #FE7F2D;
   color: white;
@@ -144,72 +56,8 @@ fieldset select {
 //    display: none;
 //  }
 
-.next {
-      display: flex;
-}
-.thought_check_thought {
-    height: 350px;
-    border: 0px;
-  }
-textarea {
-  width: 90%;
-  height: 300px;
-  border: 0px;
-}
 
-// progressbar css
-
-#progressbar {
-  display: inline-flex;
-  max-width: 100%;
-  flex-wrap: wrap;
-}
-// #progressbar li {
-//   margin: 25px;
-//   list-style-type: none;
-//   color: white;
-//   text-transform: uppercase;
-//   font-size: 9px;
-//   float: left;
-//   position: relative;
-// }
-
-#progressbar li {
-  width: 40px;
-  line-height: 40px;
-  display: block;
-  font-size: 10px;
-  color: #333;
-  background: #EDEDED;
-  border-radius: 2px;
-  margin: 14px
-}
-/*progressbar connectors*/
-#progressbar li:after {
-  content: '';
-  width: 75%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: -75%;
-  top: 18px;
-  z-index: 1; /*put it behind the numbers*/
-}
-
-#progressbar li:first-child:after {
-  /*connector not needed before the first step*/
-  content: none;
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active {
-  background: #FE7F2D;
-  color: white;
-}
-
-@media (max-width: 742px) {
-  #progressbar li:after {
-    display: hidden;
-    content:none;
-  }
+.profile-form {
+  width: 300px;
+  height: 900px;
 }
