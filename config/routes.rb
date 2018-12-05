@@ -1,43 +1,33 @@
 Rails.application.routes.draw do
-  get 'event_answers/new'
+  # get 'responses/new'
 
-  get 'event_answers/create'
+  # get 'responses/create'
 
-  get 'event_answers/edit'
+  # get 'responses/edit'
 
-  get 'event_answers/update'
+  # get 'responses/update'
 
-  get 'event_answers/destroy'
+  # get 'responses/destroy'
 
-  get 'events/index'
+  # get 'schools/index'
 
-  get 'events/show'
+  # get 'schools/show'
 
-  get 'events/new'
+  # get 'schools/new'
 
-  get 'events/create'
+  # get 'schools/create'
 
-  get 'events/edit'
+  # get 'schools/edit'
 
-  get 'events/update'
+  # get 'schools/update'
 
-  get 'events/destroy'
+  # get 'schools/destroy'
 
-  get 'schools/index'
+  resources :questions do
+    resources :responses, only: [ :new, :create, :edit, :update, :destroy ]
+  end
 
-  get 'schools/show'
-
-  get 'schools/new'
-
-  get 'schools/create'
-
-  get 'schools/edit'
-
-  get 'schools/update'
-
-  get 'schools/destroy'
-
-  get 'profiles/choose_school'
+  resources :schools
 
   resources :profiles
 

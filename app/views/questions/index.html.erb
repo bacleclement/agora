@@ -1,0 +1,19 @@
+<div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
+  AGORA
+</div>
+<div class="container">
+    <div class="row">
+      <% @schools.each do |school| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= render 'shared/clash_card_archer_small', school: school %>
+        </div>
+      <% end %>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @questions.each do |question| %>
+      <%= render "shared/question_card", question: question %>
+    <% end %>
+  </div>
+</div>

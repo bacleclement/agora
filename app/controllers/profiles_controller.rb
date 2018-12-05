@@ -16,9 +16,6 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
-  def choose_school
-  end
-
   def create
     @user = User.find(current_user.id)
     @profile = Profile.new(params_profile)

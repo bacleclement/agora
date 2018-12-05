@@ -1,10 +1,4 @@
-class EventsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
+class ResponsesController < ApplicationController
   def new
   end
 
