@@ -4,7 +4,6 @@
       <p>Create your question!</p>
       <%= simple_form_for [@question] do |f| %>
         <%= f.error_notification %>
-        <%= f.input :title, class: "title-label" %>
         <%= f.input :question_type, label: 'What type of question?', collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecological"], multi: false, creatable: true, size: 2, input_html: { class: "select" } %>
         <%= f.input :description, class: "title-label" %>
         <%= f.button :submit, class: "btn btn-success" %>

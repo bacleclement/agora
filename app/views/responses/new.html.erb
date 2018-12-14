@@ -1,2 +1,13 @@
-<h1>Responses#new</h1>
-<p>Find me in app/views/responses/new.html.erb</p>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="card-form profile-form card-device text-center">
+      <p>Post your answer!</p>
+      <%= simple_form_for [@question, @response] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description, class: "title-label" %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

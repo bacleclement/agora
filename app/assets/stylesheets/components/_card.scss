@@ -473,3 +473,97 @@ body {
   font-weight: 700;
   margin-bottom: 3px;
 }
+
+// agora page card
+
+.question-card {
+  background: white;
+  width: 90%;
+  height: 400px;
+  // display: inline-block;
+  margin: auto;
+  border-radius: $border-radius-size + 5;
+  position: relative;
+  // text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.question-top-card {
+  position: absolute;
+  background-color: #EC9B3B;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  border-top-left-radius: $border-radius-size;
+  border-top-right-radius: $border-radius-size;
+  height: 60px;
+}
+
+.question-type {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  color: white;
+  font-size: 12px;
+}
+
+.question-description {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+.question-bottom-card {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 85px;
+}
+
+.question-detail {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.post-question-btn {
+  position: absolute;
+  left: 10px;
+}
+
+.question-detail-item-1 {
+  position: absolute;
+  right: 50px;
+}
+
+.question-detail-item-2 {
+  position: absolute;
+  right: 200px;
+}
+
+.question-detail-item-3 {
+  position: absolute;
+  right: 250px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid black;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-top: 5px solid black;
+}

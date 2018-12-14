@@ -1,3 +1,10 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10">
+    <%= link_to(new_question_path) do %>
+      <div class="post-question text-center">Post a question</div>
+    <% end %>
+  </div>
+</div>
 <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
   AGORA
 </div>
@@ -5,7 +12,7 @@
     <div class="row">
       <% @schools.each do |school| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <%= render 'shared/clash_card_archer_small', school: school %>
+          <%= render 'shared/card_school', school: school %>
         </div>
       <% end %>
     </div>

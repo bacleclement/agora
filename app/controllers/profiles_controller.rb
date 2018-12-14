@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 
-  before_action :set_profile, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_profile, only: [ :show, :voted, :edit, :update, :destroy ]
 
   def index
     profiles = Profile.all
@@ -15,6 +15,11 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
   end
+
+  # def voted(question)
+  #   @profile.voted = 1
+  #   @profile.save!
+  # end
 
   def create
     @user = User.find(current_user.id)
@@ -36,7 +41,7 @@ class ProfilesController < ApplicationController
     @profile.school = @school
     if @profile.save
       # after signup and profile created, user is redirect to show of his school (commun room)
-      redirect_to schools_show_path(@school)
+      redirect_to school_path(@school)
     else
       render :new
     end

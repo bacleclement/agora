@@ -1,20 +1,23 @@
 <div class="clash-card-small archer">
   <div class="clash-card__image-small clash-card__image--archer-small">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png" alt="archer" />
   </div>
-  <div class="clash-card__level clash-card__level--archer">Position 1 / 4</div>
-  <div class="clash-card__unit-name"><%= school.title.capitalize %></div>
-  <br>
-  <br>
-  <br>
-
+  <div class="clash-card__level clash-card__level--archer">Level 120 / 120</div>
+  <div class="clash-card__unit-name"><%= e.grade.capitalize %> <%= e.username.capitalize %></div>
+  <div class="clash-card__unit-description">
+    <!-- Future feature : change this text below with profile.bio -->
+    Luc is an absolute believer of knowledge power. Born in the city of Stagira, he loves debate to share his wisdom.
+    <br>
+    <br>
+  </div>
   <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
     <div class="one-third">
-      <div class="stat"></div>
+      <div class="stat"><%= e.role %></div>
       <div class="stat-value">Role</div>
     </div>
 
     <div class="one-third">
-      <div class="stat"><%= school.score %></div>
+      <div class="stat">26550</div>
       <div class="stat-value">Xp</div>
     </div>
 
