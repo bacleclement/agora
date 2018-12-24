@@ -1,12 +1,20 @@
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10">
-    <%= link_to(new_question_path) do %>
-      <div class="post-question text-center">Post a question</div>
-    <% end %>
-  </div>
-</div>
 <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
   AGORA
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="question-form">
+      <%= simple_form_for(@question, :html => {:class => 'form-inline' }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description, class: "question-form-item", placeholder: 'Post a question', label: false %>
+        <%= f.input :question_type, label: false, collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecological"], multi: false, creatable: true, size: 2, input_html: { class: "question-form-item" } %>
+        <%= f.button :submit,  'Add question', class: "submit-btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div class="container">
     <div class="row">
@@ -20,7 +28,35 @@
 <div class="container">
   <div class="row">
     <% @questions.each do |question| %>
-      <%= render "shared/question_card", question: question %>
+      <div class="col-xs-12">
+        <%= render "shared/question_card", question: question %>
+        <% Response.where(question_id: question.id).each do |response| %>
+          <% if response.id.odd? %>
+            <div class="col-xs-12 col-xs-offset-5">
+              <div class="response">
+                <%= response.description %>
+                <div class="line"></div>
+                <div class="response-detail-item-1">
+                  <%= link_to (questions_upvote_path(question)), method: :post do %>
+                    <div class="arrow-up"></div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+          <div class="response">
+            <%= response.description %>
+            <div class="line"></div>
+            <div class="response-detail-item-1">
+              <%= link_to (questions_upvote_path(question)), method: :post do %>
+                <div class="arrow-up"></div>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
+

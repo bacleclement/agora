@@ -317,7 +317,7 @@ body {
 }
 
 .clash-card__unit-stats--archer {
-  background: $archer;
+  background: #EC9B3B;
 
   .one-third {
      border-right: 1px solid #D04976;
@@ -361,48 +361,16 @@ body {
     padding: 20px 15px;
   }
 
-  // sup {
-  //   position: absolute;
-  //   bottom: 4px;
-  //   font-size: 45%;
-  //   margin-left: 2px;
-  // }
-
   .stat {
     position: relative;
     font-size: 24px;
     margin-bottom: 10px;
   }
 
-  // .stat-value {
-  //   text-transform: uppercase;
-  //   font-weight: 400;
-  //   font-size: 12px;
-  // }
-
   .no-border {
     border-right: none;
   }
 }
-
-// .clearfix:after {
-//   visibility: hidden;
-//   display: block;
-//   font-size: 0;
-//   content: " ";
-//   clear: both;
-//   height: 0;
-// }
-
-// .slick-prev {
-//   left: 100px;
-//   z-index: 999;
-// }
-
-// .slick-next {
-//   right: 100px;
-//   z-index: 999;
-// }
 
 // small card
 
@@ -478,17 +446,15 @@ body {
 
 .question-card {
   background: white;
-  width: 90%;
-  height: 400px;
-  // display: inline-block;
+  height: auto;
   margin: auto;
   border-radius: $border-radius-size + 5;
   position: relative;
-  // text-align: center;
   box-shadow: -1px 15px 30px -12px black;
   z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
+  height: 120px;
 }
 
 .question-top-card {
@@ -533,6 +499,8 @@ body {
 .post-question-btn {
   position: absolute;
   left: 10px;
+  text-decoration: none !important;
+  color: black;
 }
 
 .question-detail-item-1 {
@@ -543,6 +511,7 @@ body {
 .question-detail-item-2 {
   position: absolute;
   right: 200px;
+  top: -10px;
 }
 
 .question-detail-item-3 {
@@ -555,7 +524,6 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-
   border-bottom: 5px solid black;
 }
 
@@ -564,6 +532,5 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-
   border-top: 5px solid black;
 }

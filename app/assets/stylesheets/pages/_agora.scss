@@ -12,6 +12,9 @@
 
 .response {
   padding: 20px;
+  width: 640px;
+  margin-top: 5px;
+  color: white;
 }
 
 .line {
@@ -19,3 +22,51 @@
   width: 620px;
 }
 
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease;
+      opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease;
+     opacity: 0;
+     }
+   }
+ }
+
+ $border-radius-size: 14px;
+
+.question-form {
+  background: white;
+  border-radius: $border-radius-size + 5;
+  position: relative;
+  box-shadow: -1px 15px 30px -12px black;
+}
+
+.form-inline div { display: inline-block }
+
+textarea#question_description.form-control.text.optional {
+  width: 470px;
+  height: 35px;
+}
+
+.submit-btn {
+  border-radius: 0px;
+  background-color: #EC9B3B;
+  color: white;
+}

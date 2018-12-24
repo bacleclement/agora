@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
+    @question = Question.new
   end
 
   def show

@@ -10,59 +10,26 @@
   <div class="question-bottom-card">
     <div class="question-detail">
       <%= link_to(new_question_response_path(question)) do %>
-        <p class="post-question-btn">Post response</p>
+        <p class="post-question-btn">&#9997; Post response</p>
       <% end %>
       <div class="question-detail-item-1">
-        <%= @responses.count - 1 %>
-        <% if @responses.count - 1 <= 1 %>
+        <%= @responses.where(question_id: question.id).count %>
+        <% if @responses.count <= 1 %>
           answer
         <% else %>
           answers
         <% end %>
       </div>
-
       <div class="question-detail-item-2">
         <%= question.upvote %>
-        <%= link_to 'Call Action', questions_upvote_path(question), method: :post %>
-        <div class="arrow-up"></div>
-
-      </div>
-
-      <div class="question-detail-item-3">
-        <%= question.downvote %>
-        <div class="arrow-down"></div>
+        <%= link_to (questions_upvote_path(question)), method: :post do %>
+          <div class="arrow-up"></div>
+        <% end %>
       </div>
     </div>
-    <% array_responses = [] %>
-    <% b = 0 %>
-    <% @responses.each do |response| %>
-      <% if response.question_id == question.id %>
-        <% array_responses << [response.description, b += 1] %>
-      <% end %>
-    <% end %>
-      <% array_responses.each do |element| %>
-        <% if element[1].odd? %>
-          <div class="row">
-            <div class="col-xs-12 col-xs-offset-4">
-              <div class="response">
-                <%= element[0] %>
-                <div class="line"></div>
-              </div>
-            </div>
-          </div>
-        <% else %>
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="response">
-                <%= element[0] %>
-                <div class="line"></div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
   </div>
 </div>
+
 
 
 
