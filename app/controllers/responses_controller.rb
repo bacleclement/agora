@@ -53,6 +53,7 @@ class ResponsesController < ApplicationController
 
   def destroy
     @response.destroy
+    redirect_to questions_path
   end
 
   private
