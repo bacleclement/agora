@@ -26,6 +26,25 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def upvote
+    @response = Response.find(params[:format].to_i)
+    @user = User.find(current_user.id)
+    a = 0
+    @response.users_array.each do |user_and_response|
+      if user_and_response[0].to_i == @user.id && user_and_response[1].to_i == @response.id
+        a += 1
+      end
+    end
+    if a == 0
+      @response.upvote += 1
+      @response.users_array << [@user.id.to_i, @response.id.to_i]
+      @response.save!
+      redirect_to questions_path
+    else
+      redirect_to questions_path
+    end
+  end
+
   def edit
   end
 

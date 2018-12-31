@@ -484,6 +484,14 @@ body {
   font-size: 16px;
 }
 
+.question-delete {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  color: white;
+  font-size: 16px;
+}
+
 .question-bottom-card {
   position: absolute;
   left: 0px;
@@ -527,10 +535,11 @@ body {
   border-bottom: 5px solid black;
 }
 
-.arrow-down {
+.arrow-up-response {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid black;
+  border-bottom: 5px solid white;
+  margin: 5px;
 }

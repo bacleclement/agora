@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post 'questions/upvote'
 
+  post 'responses/upvote'
+
   resources :schools
 
   resources :profiles

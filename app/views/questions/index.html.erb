@@ -37,8 +37,9 @@
                 <%= response.description %>
                 <div class="line"></div>
                 <div class="response-detail-item-1">
-                  <%= link_to (questions_upvote_path(question)), method: :post do %>
-                    <div class="arrow-up"></div>
+                  <%= response.upvote %>
+                  <%= link_to (responses_upvote_path(response)), method: :post do %>
+                    <div class="arrow-up-response"></div>
                   <% end %>
                 </div>
               </div>
@@ -48,8 +49,9 @@
             <%= response.description %>
             <div class="line"></div>
             <div class="response-detail-item-1">
-              <%= link_to (questions_upvote_path(question)), method: :post do %>
-                <div class="arrow-up"></div>
+              <%= response.upvote %>
+              <%= link_to (responses_upvote_path(response)), method: :post do %>
+                <div class="arrow-up-response"></div>
               <% end %>
             </div>
           </div>
