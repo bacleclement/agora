@@ -6,6 +6,13 @@ Rails.application.routes.draw do
 
   post 'questions/upvote'
 
+  post 'questions/index_debate'
+  post 'questions/index_lifestyle'
+  post 'questions/index_trouble'
+  post 'questions/index_politic'
+  post 'questions/index_ethic'
+  post 'questions/index_ecology'
+
   post 'responses/upvote'
 
   resources :schools
@@ -21,3 +28,4 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+

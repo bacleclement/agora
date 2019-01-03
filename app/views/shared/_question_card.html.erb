@@ -1,7 +1,9 @@
 <div class="question-card">
   <div class="question-top-card">
     <div class="question-type">
-      <p> Question . <%= question.question_type.capitalize %><br></p>
+      <% if question.question_type %>
+        <p> Question . <%= question.question_type.capitalize %><br></p>
+      <% end %>
     </div>
     <div class="question-description">
       <p> <%= question.description %></p>

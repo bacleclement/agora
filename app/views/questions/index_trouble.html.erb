@@ -29,7 +29,7 @@
   <div class="col-xs-12">
     <div class="type-selection text-center">
       <%= link_to (questions_path), method: :post do %>
-        <div class="type selected">
+        <div class="type">
           All
         </div>
       <% end %>
@@ -44,7 +44,7 @@
         </div>
       <% end %>
       <%= link_to (questions_index_trouble_path), method: :post do %>
-        <div class="type">
+        <div class="type selected">
           Trouble
         </div>
       <% end %>
@@ -68,7 +68,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @questions.each do |question| %>
+    <% @questions.where(question_type: "trouble").each do |question| %>
       <div class="col-xs-12">
         <%= render "shared/question_card", question: question %>
         <% Response.where(question_id: question.id).sort_by(&:created_at).each do |response| %>
@@ -125,3 +125,4 @@
   var types = document.querySelectorAll('.type');
   types.forEach(type => type.addEventListener('click', addSelected));
 </script>
+

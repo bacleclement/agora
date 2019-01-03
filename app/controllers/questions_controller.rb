@@ -12,6 +12,48 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def index_debate
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
+  def index_lifestyle
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
+  def index_trouble
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
+  def index_politic
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
+  def index_ethic
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
+  def index_ecology
+    @questions = Question.all
+    @schools = School.all
+    @responses = Response.all
+    @question = Question.new
+  end
+
   def show
   end
 
@@ -72,7 +114,7 @@ class QuestionsController < ApplicationController
   private
 
   def params_question
-    params.require(:question).permit(:description, :question_type)
+    params.permit(:description, :question_type)
   end
 
   def set_question
