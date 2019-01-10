@@ -1,15 +1,12 @@
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-4">
-    <div class="card-form profile-form card-device text-center">
-      <p>Create your question!</p>
-      <%= simple_form_for [@question] do |f| %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="question-form">
+      <%= simple_form_for(@question, :html => {:class => 'form-inline' }) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :question_type, label: 'What type of question?', collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecological"], multi: false, creatable: true, size: 2, input_html: { class: "select" } %>
-        <%= f.input :description, class: "title-label" %>
-        <%= f.button :submit, class: "btn btn-success" %>
+        <%= f.input :description, class: "question-form-item", placeholder: 'Post a question', label: false %>
+        <%= f.input :question_type, label: false, collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecology"], multi: false, creatable: true, size: 2, input_html: { class: "question-form-item" } %>
+        <%= f.button :submit,  'Add question', class: "submit-btn" %>
       <% end %>
     </div>
   </div>
 </div>
-
-

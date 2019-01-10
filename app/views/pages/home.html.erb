@@ -1,205 +1,206 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1 class="text-center" style="color: white">AG<strong style="color: red">O</strong>RA</h1>
-      <p class="text-center" style="color: white"><strong>Defend</strong> your school, <strong>improve</strong> your life!</p>
-      <div class="text-center"> <%= image_tag "parthenon.png", height: 150 %></div>
-      <p class="text-center banner" style="color: white">Once upon a time Agora, a place where each citizen could debate.  <br>A place where philosophic schools could share their doctrine… <br>Today internet is our Agora, but...<a href="#">read more</a></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center" style="color: white">AG<strong style="color: red">O</strong>RA</h1>
+        <p class="text-center" style="color: white"><strong>Defend</strong> your school, <strong>improve</strong> your life!</p>
+        <div class="text-center"> <%= image_tag "parthenon.png", height: 150 %></div>
+        <p class="text-center banner" style="color: white">Once upon a time Agora, a place where each citizen could debate.  <br>A place where philosophic schools could share their doctrine… <br>Today internet is our Agora, but...<a href="#">read more</a></p>
+      </div>
     </div>
   </div>
-</div>
-<div style="background-color: white">
+  <div style="background-color: white">
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <%= image_tag "citizen.png", height: 90, class: "card-img" %>
+            <p class="card-item text-center">Become a citizen</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <%= image_tag "parthenon.png", height: 90, class: "card-img"  %>
+            <p class="card-item  text-center">Choose a school</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <%= image_tag "cup.png", height: 90, class: "card-img" %>
+            <p class="card-item  text-center">Win the world cup</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-offset-5">
+            <%= link_to (new_user_registration_path) do %>
+              <p class="navbar-wagon-item navbar-wagon-link become-citizen call-to-action"><%= image_tag "citizen.png", height: 30, class: "navbar-wagon-item navbar-wagon-link" %> <strong>Become a citizen</strong></p>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
-    <div class="row" >
+    <p class="school-details-title text-center">Discover few schools…</p>
+    <div class="row">
       <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <%= image_tag "citizen.png", height: 90, class: "card-img" %>
-          <p class="card-item text-center">Become a citizen</p>
-        </div>
+          <div class="card">
+            <%= image_tag "zeus.png", height: 90, class: "card-img" %>
+            <p class="card-item text-center">Stoicism</p>
+          </div>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <p class="stoic-description">Stoicism is a school of Hellenistic philosophy founded by
+          Zeno of Citium in Athens in the early 3rd century BC. It was
+          heavily influenced by certain teachings of Socrates, while Stoic
+          physics are largely drawn from the teachings of the philosopher
+          Heraclitus. Stoicism is predominantly a philosophy of personal
+          ethics informed by its system of logic and its views on the
+          natural world.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-xs-12">
+        <p class="stoic-description">Epicureanism is a system of philosophy based upon the teachings
+        of the ancient Greek philosopher Epicurus, founded around 307
+        BC. Epicurus was an atomic materialist, following in the steps of
+        Democritus. His materialism led him to a general attack on
+        superstition and divine intervention. Following Aristippus—about
+        whom very little is known—Epicurus believed that what he called "
+        pleasure"</p>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="card">
-          <%= image_tag "parthenon.png", height: 90, class: "card-img"  %>
-          <p class="card-item  text-center">Choose a school</p>
-        </div>
+          <%= image_tag "apollo.png", height: 90, class: "card-img" %>
+          <p class="card-item text-center">Epicureanism</p>
       </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <%= image_tag "cup.png", height: 90, class: "card-img" %>
-          <p class="card-item  text-center">Win the world cup</p>
+      </div>
+    </div>
+    <p><a href="#">Discover all schools</a></p>
+  </div>
+  <div class="path-section">
+    <div class="row">
+      <p class="path-title text-center">How win the cup?</p>
+      <div class="large-8 large-centered">
+        <div class="wrapper">
+          <div class="circle">
+            <p class="item-path"><strong>1.</strong><br> Enroll people into your
+              school</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="circle">
+            <p class="item-path"><strong>2.</strong><br> Debate into the agora</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="circle">
+            <p class="item-path"><strong>3.</strong><br> Gather a maximum
+            of point</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="circle">
+            <p class="item-path"><strong>4.</strong><br>Win the world cup!</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-offset-5">
           <%= link_to (new_user_registration_path) do %>
-            <p class="navbar-wagon-item navbar-wagon-link become-citizen call-to-action"><%= image_tag "citizen.png", height: 30, class: "navbar-wagon-item navbar-wagon-link" %> <strong>Become a citizen</strong></p>
+            <p class="navbar-wagon-item navbar-wagon-link become-citizen"><%= image_tag "citizen.png", height: 30, class: "navbar-wagon-item navbar-wagon-link call-to-action" %> <strong>Become a citizen</strong></p>
           <% end %>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <p class="school-details-title text-center">Discover few schools…</p>
-  <div class="row">
-    <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <%= image_tag "zeus.png", height: 90, class: "card-img" %>
-          <p class="card-item text-center">Stoicism</p>
-        </div>
-    </div>
-    <div class="col-md-8 col-xs-12">
-      <p class="stoic-description">Stoicism is a school of Hellenistic philosophy founded by
-        Zeno of Citium in Athens in the early 3rd century BC. It was
-        heavily influenced by certain teachings of Socrates, while Stoic
-        physics are largely drawn from the teachings of the philosopher
-        Heraclitus. Stoicism is predominantly a philosophy of personal
-        ethics informed by its system of logic and its views on the
-        natural world.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-xs-12">
-      <p class="stoic-description">Epicureanism is a system of philosophy based upon the teachings
-      of the ancient Greek philosopher Epicurus, founded around 307
-      BC. Epicurus was an atomic materialist, following in the steps of
-      Democritus. His materialism led him to a general attack on
-      superstition and divine intervention. Following Aristippus—about
-      whom very little is known—Epicurus believed that what he called "
-      pleasure"</p>
-    </div>
-    <div class="col-md-4 col-xs-12">
-      <div class="card">
-        <%= image_tag "apollo.png", height: 90, class: "card-img" %>
-        <p class="card-item text-center">Epicureanism</p>
-    </div>
-    </div>
-  </div>
-  <p><a href="#">Discover all schools</a></p>
-</div>
-<div class="path-section">
-  <div class="row">
-    <p class="path-title text-center">How win the cup?</p>
-    <div class="large-8 large-centered">
-      <div class="wrapper">
-        <div class="circle">
-          <p class="item-path"><strong>1.</strong><br> Enroll people into your
-            school</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="circle">
-          <p class="item-path"><strong>2.</strong><br> Debate into the agora</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="circle">
-          <p class="item-path"><strong>3.</strong><br> Gather a maximum
-          of point</p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="circle">
-          <p class="item-path"><strong>4.</strong><br>Win the world cup!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-offset-5">
-        <%= link_to (new_user_registration_path) do %>
-          <p class="navbar-wagon-item navbar-wagon-link become-citizen"><%= image_tag "citizen.png", height: 30, class: "navbar-wagon-item navbar-wagon-link call-to-action" %> <strong>Become a citizen</strong></p>
-        <% end %>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="container">
-    <p class="path-title text-center">Up your level!</p>
-    <div class="row" >
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level text-center"><strong>1. Citizen</strong><br>
-            Post questions,
-            see responses, vote for the
-            best one.</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level  text-center"><strong>2. Novice</strong><br>
-            Acces to your school’s
-            room, post response, vote,
-            discuss with your comminuty</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level  text-center"><strong>3. Student</strong><br>
-            Create events, challenge,
-            developp your
-            community</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level text-center"><strong>4. Disciple</strong><br>
-            Create meetup with your
-            community. </p>
-        </div>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level  text-center"><strong>5. Teacher</strong><br>
-            Take part in the construction of
-            your room (edit content),
-            animate meetup.</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <p class="card-item-level  text-center"><strong>6. Master</strong><br>
-            Lead your community, create
-            your own school</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div style="background-color: white">
-  <div class="container">
-    <p class="school-details-title text-center">Select your class</p>
-    <div class="row">
-      <div class="col-md-4 col-xs-12">
+  <div>
+    <div class="container">
+      <p class="path-title text-center">Up your level!</p>
+      <div class="row" >
+        <div class="col-md-4 col-xs-12">
           <div class="card">
-            <%= image_tag "zeus.png", height: 90, class: "card-img" %>
-            <p class="card-item text-center">Rhetor</p>
+            <p class="card-item-level text-center"><strong>1. Citizen</strong><br>
+              Post questions,
+              see responses, vote for the
+              best one.</p>
           </div>
-      </div>
-      <div class="col-md-8 col-xs-12">
-        <p class="stoic-description">The term rhetor had the technical denotation of a professional orator/politician/advocate, one who actively participated in the affairs of state and court" (Rhetoric Society Quarterly, 1994). In some contexts, a rhetor was roughly equivalent to what we would call an attorney or a lawyer.</p>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <p class="card-item-level  text-center"><strong>2. Novice</strong><br>
+              Acces to your school’s
+              room, post response, vote,
+              discuss with your comminuty</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <p class="card-item-level  text-center"><strong>3. Student</strong><br>
+              Create events, challenge,
+              developp your
+              community</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <p class="card-item-level text-center"><strong>4. Disciple</strong><br>
+              Create meetup with your
+              community. </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <p class="card-item-level  text-center"><strong>5. Teacher</strong><br>
+              Take part in the construction of
+              your room (edit content),
+              animate meetup.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <p class="card-item-level  text-center"><strong>6. Master</strong><br>
+              Lead your community, create
+              your own school</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-8 col-xs-12">
-        <p class="stoic-description">Someone who learns from their mistakes, forgives themselves and tries to be a better version of themselves.A wise person knows his faults and admits when he's wrong.He also knows his strengths and he tries to be the best version of himself.He knows failure is the greatest teacher and he still has a lot to learn. He's humble and always ready to learn anything and everything. He's open to experiences and accepts failure and success with quiet dignity.</p>
+  </div>
+  <div style="background-color: white">
+    <div class="container">
+      <p class="school-details-title text-center">Select your class</p>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <div class="card">
+              <%= image_tag "zeus.png", height: 90, class: "card-img" %>
+              <p class="card-item text-center">Rhetor</p>
+            </div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+          <p class="stoic-description">The term rhetor had the technical denotation of a professional orator/politician/advocate, one who actively participated in the affairs of state and court" (Rhetoric Society Quarterly, 1994). In some contexts, a rhetor was roughly equivalent to what we would call an attorney or a lawyer.</p>
+        </div>
       </div>
-      <div class="col-md-4 col-xs-12">
-        <div class="card">
-          <%= image_tag "citizen.png", height: 90, class: "card-img" %>
-          <p class="card-item text-center">Wise</p>
+      <div class="row">
+        <div class="col-md-8 col-xs-12">
+          <p class="stoic-description">Someone who learns from their mistakes, forgives themselves and tries to be a better version of themselves.A wise person knows his faults and admits when he's wrong.He also knows his strengths and he tries to be the best version of himself.He knows failure is the greatest teacher and he still has a lot to learn. He's humble and always ready to learn anything and everything. He's open to experiences and accepts failure and success with quiet dignity.</p>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <div class="card">
+            <%= image_tag "citizen.png", height: 90, class: "card-img" %>
+            <p class="card-item text-center">Wise</p>
+        </div>
+        </div>
       </div>
-      </div>
+      <p><a href="#">Discover all class</a></p>
     </div>
-    <p><a href="#">Discover all class</a></p>
   </div>
-</div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Agora all rights reserved <i class="fas fa-heart"></i>
+    </div>
   </div>
-  <div class="footer-copyright">
-    Agora all rights reserved <i class="fas fa-heart"></i>
-  </div>
-</div>
+

@@ -2,56 +2,46 @@ class QuestionsController < ApplicationController
 
   before_action :set_question, only: [ :show, :edit, :update, :destroy ]
 
-  # find a way to keep data save even if user refresh page
-  # USERS_AND_QUESTIONS = []
-
   def index
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_debate
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_lifestyle
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_trouble
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_politic
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_ethic
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def index_ecology
     @questions = Question.all
     @schools = School.all
     @responses = Response.all
-    @question = Question.new
   end
 
   def show
@@ -86,7 +76,7 @@ class QuestionsController < ApplicationController
     @profile = Profile.find(@user.id) #to confirm?
     @question.profile = @profile
     @question.upvote = 0
-    @question.downvote = 0
+    @profile.xp += 100
     if @question.save
       redirect_to questions_path
     else
@@ -114,7 +104,7 @@ class QuestionsController < ApplicationController
   private
 
   def params_question
-    params.permit(:description, :question_type)
+    params.require(:question).permit(:description, :question_type)
   end
 
   def set_question

@@ -1,2 +1,24 @@
-<h1>Schools#index</h1>
-<p>Find me in app/views/schools/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-11 text-center">
+      <%= link_to new_school_path do %>
+        <p class="btn-card schools_path">Create your own school</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
+  Schools
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <% @schools.sort_by(&:created_at).each do |school| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= render 'shared/card_school', school: school %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -18,7 +18,7 @@ class ResponsesController < ApplicationController
     @response.profile = @profile
     @response.question = @question
     @response.upvote = 0
-    @response.downvote = 0
+    @profile.xp += 50
     if @response.save
       redirect_to questions_path
     else

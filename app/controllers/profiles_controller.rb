@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(params_profile)
     @profile.user = @user
     @profile.grade = "citizen"
+    @profile.xp = 0
     if params["profile"]["school_id"] == "1"
       @school = School.find(1)
     end

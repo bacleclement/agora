@@ -1,3 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10 text-center">
+      <%= link_to(new_question_path) do %>
+        <p class="btn-card">Post a question</p>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
   AGORA
 </div>
@@ -5,17 +14,47 @@
 <br>
 <br>
 <div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <div class="question-form">
-      <%= simple_form_for(@question, :html => {:class => 'form-inline' }) do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :description, class: "question-form-item", placeholder: 'Post a question', label: false %>
-        <%= f.input :question_type, label: false, collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecology"], multi: false, creatable: true, size: 2, input_html: { class: "question-form-item" } %>
-        <%= f.button :submit,  'Add question', class: "submit-btn" %>
+  <div class="col-xs-12">
+    <div class="type-selection text-center">
+      <%= link_to (questions_path) do %>
+        <div class="type">
+          All
+        </div>
+      <% end %>
+      <%= link_to (questions_index_debate_path) do %>
+        <div class="type selected">
+          Debate
+        </div>
+      <% end %>
+      <%= link_to (questions_index_lifestyle_path) do %>
+        <div class="type">
+          Lifestyle
+        </div>
+      <% end %>
+      <%= link_to (questions_index_trouble_path) do %>
+        <div class="type">
+          Trouble
+        </div>
+      <% end %>
+      <%= link_to (questions_index_politic_path) do %>
+        <div class="type">
+          Politic
+        </div>
+      <% end %>
+      <%= link_to (questions_index_ethic_path) do %>
+        <div class="type">
+          Ethic
+        </div>
+      <% end %>
+      <%= link_to (questions_index_ecology_path) do %>
+        <div class="type">
+          Ecology
+        </div>
       <% end %>
     </div>
   </div>
 </div>
+
 <div class="container">
     <div class="row">
       <% @schools.sort_by(&:created_at).each do |school| %>
@@ -25,50 +64,9 @@
       <% end %>
     </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="type-selection text-center">
-      <%= link_to (questions_path), method: :post do %>
-        <div class="type">
-          All
-        </div>
-      <% end %>
-      <%= link_to (questions_index_debate_path), method: :post do %>
-        <div class="type selected">
-          Debate
-        </div>
-      <% end %>
-      <%= link_to (questions_index_lifestyle_path), method: :post do %>
-        <div class="type">
-          Lifestyle
-        </div>
-      <% end %>
-      <%= link_to (questions_index_trouble_path), method: :post do %>
-        <div class="type">
-          Trouble
-        </div>
-      <% end %>
-      <%= link_to (questions_index_politic_path), method: :post do %>
-        <div class="type">
-          Politic
-        </div>
-      <% end %>
-      <%= link_to (questions_index_ethic_path), method: :post do %>
-        <div class="type">
-          Ethic
-        </div>
-      <% end %>
-      <%= link_to (questions_index_ecology_path), method: :post do %>
-        <div class="type">
-          Ecology
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 <div class="container">
   <div class="row">
-    <% @questions.where(question_type: "debate").each do |question| %>
+    <% @questions.where(question_type: "debate").sort_by(&:created_at).reverse.each do |question| %>
       <div class="col-xs-12">
         <%= render "shared/question_card", question: question %>
         <% Response.where(question_id: question.id).sort_by(&:created_at).each do |response| %>

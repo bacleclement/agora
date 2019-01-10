@@ -87,3 +87,17 @@ textarea#question_description.form-control.text.optional {
   border-radius: $border-radius-size + 5;
   box-shadow: -1px 15px 30px -12px black;
 }
+
+.btn-card {
+  background-color: #eb9b3b;
+  border-radius: $border-radius-size + 5;
+  box-shadow: -1px 15px 30px -12px black;
+  text-decoration: none !important;
+  color: white;
+  padding: 10px;
+  width: 150px;
+}
+
+.schools_path {
+  margin-top: 30px;
+}

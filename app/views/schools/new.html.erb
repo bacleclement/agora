@@ -1,2 +1,14 @@
-<h1>Schools#new</h1>
-<p>Find me in app/views/schools/new.html.erb</p>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="card-form profile-form card-device text-center">
+      <p>Post your answer!</p>
+      <%= simple_form_for [@school] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :title, class: "title-label" %>
+        <%= f.input :description, class: "title-label" %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
