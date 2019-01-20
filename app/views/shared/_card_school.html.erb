@@ -2,7 +2,7 @@
   <br>
   <br>
   <br>
-  <div class="clash-card__level clash-card__level--archer">Position 1 / 4</div>
+  <div class="clash-card__level clash-card__level--archer">Position <%= school.position %> / <%= @schools.count %></div>
   <div class="clash-card__unit-name"><%= school.title.capitalize %></div>
   <br>
   <br>
@@ -10,7 +10,7 @@
   <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
 
     <div class="one-third">
-      <div class="stat"><%= school.score %></div>
+      <div class="stat"><%= school.xp %></div>
       <div class="stat-value">Xp</div>
     </div>
 

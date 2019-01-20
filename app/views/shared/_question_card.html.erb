@@ -5,6 +5,7 @@
         <p> Question . <%= question.question_type.capitalize %><br></p>
       <% end %>
     </div>
+    <p class="question-author">By <%= Profile.find(question.profile_id).username.capitalize %></p>
     <div class="question-description">
       <p> <%= question.description %></p>
     </div>

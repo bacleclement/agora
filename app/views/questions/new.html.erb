@@ -4,7 +4,7 @@
       <%= simple_form_for(@question, :html => {:class => 'form-inline' }) do |f| %>
         <%= f.error_notification %>
         <%= f.input :description, class: "question-form-item", placeholder: 'Post a question', label: false %>
-        <%= f.input :question_type, label: false, collection: ["debate", "lifestyle", "trouble", "politic", "ethic", "ecology"], multi: false, creatable: true, size: 2, input_html: { class: "question-form-item" } %>
+        <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %>
         <%= f.button :submit,  'Add question', class: "submit-btn" %>
       <% end %>
     </div>

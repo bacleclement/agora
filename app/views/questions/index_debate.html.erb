@@ -7,12 +7,6 @@
     </div>
   </div>
 </div>
-<div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
-  AGORA
-</div>
-<br>
-<br>
-<br>
 <div class="row">
   <div class="col-xs-12">
     <div class="type-selection text-center">
@@ -57,7 +51,7 @@
 
 <div class="container">
     <div class="row">
-      <% @schools.sort_by(&:created_at).each do |school| %>
+      <% @schools.sort_by(&:position).first(4).each do |school| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <%= render 'shared/card_school', school: school %>
         </div>

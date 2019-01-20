@@ -80,6 +80,9 @@ textarea#question_description.form-control.text.optional {
   display: inline-block;
   padding: 20px;
   color: white;
+  a {
+    color: white;
+  }
 }
 
 .selected {

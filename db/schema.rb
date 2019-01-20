@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190110212342) do
+ActiveRecord::Schema.define(version: 20190115061152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "display_in_navbar", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id"
@@ -42,6 +50,8 @@ ActiveRecord::Schema.define(version: 20190110212342) do
     t.datetime "updated_at", null: false
     t.string "question_type"
     t.string "users_array", default: [], array: true
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_questions_on_category_id"
     t.index ["profile_id"], name: "index_questions_on_profile_id"
   end
 
@@ -69,8 +79,6 @@ ActiveRecord::Schema.define(version: 20190110212342) do
     t.datetime "updated_at", null: false
     t.integer "xp"
     t.integer "position"
-    t.bigint "profile_id"
-    t.index ["profile_id"], name: "index_schools_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,8 +95,8 @@ ActiveRecord::Schema.define(version: 20190110212342) do
 
   add_foreign_key "profiles", "schools"
   add_foreign_key "profiles", "users"
+  add_foreign_key "questions", "categories"
   add_foreign_key "questions", "profiles"
   add_foreign_key "responses", "profiles"
   add_foreign_key "responses", "questions"
-  add_foreign_key "schools", "profiles"
 end

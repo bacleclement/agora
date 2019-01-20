@@ -454,7 +454,7 @@ body {
   z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
-  height: 120px;
+  height: 170px;
 }
 
 .question-top-card {
@@ -465,7 +465,7 @@ body {
   left: 0px;
   border-top-left-radius: $border-radius-size;
   border-top-right-radius: $border-radius-size;
-  height: 60px;
+  height: 100px;
 }
 
 .question-type {
@@ -474,6 +474,14 @@ body {
   left: 20px;
   color: white;
   font-size: 12px;
+}
+
+.question-author {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  font-size: 12px;
+  color: white;
 }
 
 .question-description {
@@ -486,7 +494,7 @@ body {
 
 .question-delete {
   position: absolute;
-  top: 25px;
+  top: 45px;
   right: 20px;
   color: white;
   font-size: 16px;
@@ -502,6 +510,7 @@ body {
 .question-detail {
   position: relative;
   padding-bottom: 20px;
+  bottom: -50px;
 }
 
 .post-question-btn {
@@ -533,6 +542,7 @@ body {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid black;
+      bottom: -50px;
 }
 
 .arrow-up-response {

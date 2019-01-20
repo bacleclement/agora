@@ -1,5 +1,44 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
-<%= @profile.username %>
-<%= current_user.email %>
-<%= @profile.school.title %>
+<div class="container">
+  <div class="row">
+    <div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">My profile</div>
+    <div class="col-sm-12 col-md-6">
+      <div class="clash-card-description archer">
+        <div class="clash-card__image_description clash-card__image--archer"></div>
+        <div class="clash-card__unit-name">Description</div>
+        <div class="clash-card__unit-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div> <!-- end clash-card archer-->
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="clash-card-description archer">
+        <br>
+        <br>
+        <div class="clash-card__unit-name"><%= @profile.username %></div>
+        <br>
+        <br>
+        <p><%= @profile.city %></p>
+        <p><%= @profile.age %></p>
+        <% school = School.find(@profile.school_id) %>
+        <p><%= school.title %></p>
+
+        <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
+          <div class="one-third">
+            <div class="stat"><%= Response.where(profile_id: @profile.id).count %></div>
+            <div class="stat-value">Responses</div>
+          </div>
+
+          <div class="one-third">
+            <div class="stat"><%= @profile.xp %></div>
+            <div class="stat-value">Xp</div>
+          </div>
+
+          <div class="one-third no-border">
+            <div class="stat"><%= Question.where(profile_id: @profile.id).count %></div>
+            <div class="stat-value">Questions</div>
+          </div>
+        </div>
+      </div> <!-- end clash-card archer-->
+    </div>
+  </div>
+</div>

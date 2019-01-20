@@ -26,23 +26,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(params_profile)
     @profile.user = @user
     @profile.grade = "citizen"
-    @profile.xp = 0
-    if params["profile"]["school_id"] == "1"
-      @school = School.find(1)
-    end
-    if params["profile"]["school_id"] == "2"
-      @school = School.find(2)
-    end
-    if params["profile"]["school_id"] == "3"
-      @school = School.find(3)
-    end
-    if params["profile"]["school_id"] == "4"
-      @school = School.find(4)
-    end
-    @profile.school = @school
+    # when the user create his profile, he starts with 100xp (line below)
+    @profile.xp = 100
     if @profile.save
-      # after signup and profile created, user is redirect to show of his school (commun room)
-      redirect_to school_path(@school)
+      # after signup and profile created, user is redirect to question's index
+      redirect_to questions_path
     else
       render :new
     end
@@ -67,7 +55,7 @@ class ProfilesController < ApplicationController
   private
 
   def params_profile
-    params.require(:profile).permit(:city, :username, :age, :sexe, :school_id, :role, :grade)
+    params.require(:profile).permit(:city, :username, :age, :sexe, :role, :school_id)
   end
 
   def set_profile

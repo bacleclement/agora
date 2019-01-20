@@ -7,57 +7,36 @@
     </div>
   </div>
 </div>
-<div class="clash-card__unit-name text-center" style="color: white; margin-top: 100px;">
-  AGORA
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10 text-center">
+      <%= link_to(new_category_path) do %>
+        <p class="btn-card">Create a category</p>
+      <% end %>
+    </div>
+  </div>
 </div>
-<br>
-<br>
-<br>
 <div class="row">
   <div class="col-xs-12">
     <div class="type-selection text-center">
-      <%= link_to (questions_path) do %>
-        <div class="type selected">
-          All
-        </div>
-      <% end %>
-      <%= link_to (questions_index_debate_path), method: :post do %>
+      <div class="type selected">
+        <%= link_to "All", questions_path %>
+      </div>
+      <% @categories.sort_by(&:id).first(5).each do |category| %>
         <div class="type">
-          Debate
+          <%= link_to category.name.capitalize, questions_path(category_id: category.id) %>
         </div>
       <% end %>
-      <%= link_to (questions_index_lifestyle_path), method: :post do %>
-        <div class="type">
-          Lifestyle
-        </div>
-      <% end %>
-      <%= link_to (questions_index_trouble_path), method: :post do %>
-        <div class="type">
-          Trouble
-        </div>
-      <% end %>
-      <%= link_to (questions_index_politic_path), method: :post do %>
-        <div class="type">
-          Politic
-        </div>
-      <% end %>
-      <%= link_to (questions_index_ethic_path), method: :post do %>
-        <div class="type">
-          Ethic
-        </div>
-      <% end %>
-      <%= link_to (questions_index_ecology_path), method: :post do %>
-        <div class="type">
-          Ecology
-        </div>
-      <% end %>
+      <div class="type">
+        <%= link_to "More", categories_path %>
+      </div>
     </div>
   </div>
 </div>
 <!-- display just 4 first schools -->
 <div class="container">
   <div class="row">
-    <% @schools.sort_by(&:created_at).each do |school| %>
+    <% @schools.sort_by(&:position).first(4).each do |school| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <%= render 'shared/card_school', school: school %>
       </div>
