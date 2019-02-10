@@ -290,3 +290,30 @@ puts "Lyceum teacher 4"
     )
 
 puts "teachers Lyceum created"
+
+puts "Technology category"
+  cat1 = Category.create!(
+      name: "Technology",
+    )
+
+puts "Ethic category"
+  cat1 = Category.create!(
+      name: "Ethic",
+    )
+
+puts "Ecology category"
+  cat1 = Category.create!(
+      name: "Ecology",
+    )
+
+puts "Religion category"
+  cat1 = Category.create!(
+      name: "Religion",
+    )
+
+puts "Lifestyle category"
+  cat1 = Category.create!(
+      name: "Technology",
+    )
+
+puts "Categories have been created"

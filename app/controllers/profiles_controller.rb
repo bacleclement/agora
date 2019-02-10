@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
   # end
 
   def show
+    @questions = Question.where(profile_id: @profile.id)
+    @responses = Response.all
   end
 
   def new

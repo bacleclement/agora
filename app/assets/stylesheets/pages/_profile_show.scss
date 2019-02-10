@@ -1,0 +1,30 @@
+.detail_profile_show {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.line-profile {
+  border: 0.5px #EC9B3B solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.profile-card {
+  position: relative;
+}
+
+.details-item-profile {
+  position: absolute;
+  bottom: 90px;
+  margin: 5px;
+  & i {
+    color: #EC9B3B;
+  }
+  &.one {
+    right: 5px;
+  }
+  &.two {
+    right: 30px;
+  }
+}
+

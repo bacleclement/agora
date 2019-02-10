@@ -3,14 +3,14 @@
 
   <div class="col-sm-4 col-sm-offset-4">
     <div class="card-form card-device text-center">
-    <h3 class="title-device">Become citizen!</h3>
+    <h3 class="title-device text-center">Become citizen</h3>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="form-group">
         <%= f.label :email, class: "title-label" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "jojo@gmail.com", textholder: 'jojo@gmail.com' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "jojo@gmail.com", placeholder: 'jojo@gmail.com', class: "field" %>
       </div>
 
       <div class="form-group">
@@ -18,16 +18,16 @@
         <% if @minimum_password_length %>
 
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: '******', class: "field" %>
       </div>
 
       <div class="form-group">
         <%= f.label :"Confirmation", class: "title-label" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: '******', class: "field" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: "btn submit" %>
+        <%= f.submit "Sign up", class: "btn submit btn-primary" %>
       </div>
     <% end %>
     <div class="text-center">

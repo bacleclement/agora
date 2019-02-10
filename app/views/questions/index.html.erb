@@ -7,23 +7,14 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 col-md-offset-10 text-center">
-      <%= link_to(new_category_path) do %>
-        <p class="btn-card">Create a category</p>
-      <% end %>
-    </div>
-  </div>
-</div>
 <div class="row">
   <div class="col-xs-12">
     <div class="type-selection text-center">
-      <div class="type selected">
+      <div class="type<%= " active" if !params.has_key?(:category_id) %>">
         <%= link_to "All", questions_path %>
       </div>
       <% @categories.sort_by(&:id).first(5).each do |category| %>
-        <div class="type">
+        <div class="type<%= " active" if params.has_key?(:category_id) && category.id == @category_id.id%>">
           <%= link_to category.name.capitalize, questions_path(category_id: category.id) %>
         </div>
       <% end %>
@@ -61,39 +52,47 @@
           <% if response.id.odd? %>
             <div class="col-xs-12 col-xs-offset-5">
               <div class="response">
-                <%= response.description %>
+                <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+                <p><%= response.description %></p>
                 <div class="line"></div>
-                <div class="response-detail-item-1">
-                  <%= response.upvote %>
+                <div class="response-upvote">
                   <%= link_to (responses_upvote_path(response)), method: :post do %>
-                    <div class="arrow-up-response"></div>
+                    <i class="fas fa-thumbs-up"></i>
                   <% end %>
+                  <%= response.upvote %>
                 </div>
-                <div class="response-detail-item-2">
+                <div class="response-delete">
                   <% if response.profile.user_id == current_user.id %>
                     <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <p>&#x1F5D1;</p>
+                      <i class="fas fa-trash"></i>
                     <% end %>
                 <% end %>
+                </div>
+                <div class="response-owner-username">
+                  <%= Profile.find(response.profile_id).username.capitalize %>
                 </div>
               </div>
             </div>
           <% else %>
             <div class="response">
-              <%= response.description %>
+              <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+              <p><%= response.description %></p>
               <div class="line"></div>
-              <div class="response-detail-item-1">
-                <%= response.upvote %>
+              <div class="response-upvote">
                 <%= link_to (responses_upvote_path(response)), method: :post do %>
-                  <div class="arrow-up-response"></div>
+                  <i class="fas fa-thumbs-up"></i>
                 <% end %>
+                <%= response.upvote %>
               </div>
-              <div class="response-detail-item-2">
+              <div class="response-delete">
                 <% if response.profile.user_id == current_user.id %>
                   <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <p>&#x1F5D1;</p>
+                      <i class="fas fa-trash"></i>
                     <% end %>
                 <% end %>
+              </div>
+              <div class="response-owner-username">
+                <%= Profile.find(response.profile_id).username.capitalize %>
               </div>
             </div>
           <% end %>
@@ -102,12 +101,3 @@
     <% end %>
   </div>
 </div>
-
-<!-- <script>
-  function addSelected(e) {
-    if (e.propertyName !== 'selected') return;
-    e.target.classList.add('selected');
-  }
-  var types = document.querySelectorAll('.type');
-  types.forEach(type => type.addEventListener('click', addSelected));
-</script> -->

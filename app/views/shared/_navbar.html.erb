@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "Articles", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <% if Profile.find(current_user.id).school_id %>
+      <% if user_signed_in? && has_profile? %>
         <%= link_to "My school", school_path(Profile.find(current_user.id).school_id), class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -22,8 +22,10 @@
           <%= image_tag "citizen.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to profile_path(Profile.find(current_user.id).id) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% if user_signed_in? && has_profile? %>
+                <%= link_to profile_path(Profile.find(current_user.id).id) do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
               <% end %>
             </li>
             <li>

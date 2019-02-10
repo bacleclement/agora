@@ -22,10 +22,11 @@ class ResponsesController < ApplicationController
     @profile.xp += 50
     @profile.save!
     # add xp to the school
-    @school = School.find(@profile.school_id)
+    @school = School.find(@response.school_id)
     @school.xp += 50
     @school.save!
     if @response.save
+
       redirect_to questions_path
     else
       render :new
@@ -69,7 +70,7 @@ class ResponsesController < ApplicationController
   private
 
   def params_response
-    params.require(:response).permit(:description)
+    params.require(:response).permit(:description, :school_id)
   end
 
   def set_response

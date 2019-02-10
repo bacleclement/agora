@@ -59,17 +59,14 @@
   &.card-device {
     width: 400px;
     margin-top: 100px;
-    background-color: $agora-color;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+    background-color: white;
     padding-top: 20px;
-    &.new-session  {
-      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
-    }
+
   }
   &.card-form {
     width: 400px;
     margin-top: 100px;
-    background-color: $agora-color;
+    background-color: white;
     padding-top: 20px;
     margin-top: -15px;
     margin-left: 50px;
@@ -159,22 +156,6 @@ body {
   color: #9E9E9E;
 }
 
-// .slide-container {
-//   margin: auto;
-//   width: 600px;
-//   text-align: center;
-// }
-
-// .wrapper {
-//   padding-top: 40px;
-//   padding-bottom: 40px;
-
-//   &:focus {
-//     outline: 0;
-//   }
-// }
-
-
 .clash-card {
   background: white;
   width: 300px;
@@ -238,16 +219,6 @@ body {
     left: -37px;
   }
 }
-
-// .clash-card__image--giant {
-//   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg');
-//   img {
-//     width: 340px;
-//     position: absolute;
-//     top: -30px;
-//     left: -25px;
-//   }
-// }
 
 .clash-card__image--goblin {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
@@ -536,20 +507,3 @@ body {
   right: 250px;
 }
 
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid black;
-      bottom: -50px;
-}
-
-.arrow-up-response {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid white;
-  margin: 5px;
-}

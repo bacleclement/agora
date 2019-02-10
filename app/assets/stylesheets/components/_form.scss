@@ -1,13 +1,21 @@
 .title-label {
-  color: #FFF;
+  color: black;
   font-family: 'Montserrat', sans-serif;
 }
 
 .title-device {
-  color: #FFF;
+  color: black;
   position: absolute;
   top: 5px;
   left: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.field {
+  background-color: #F0F0F0;
+  padding: 10px;
+  width: 80%;
 }
 
 #new_user {
@@ -17,11 +25,12 @@
 .submit {
   margin-top: 20px;
   margin: 30px;
+  width: 80%;
 }
 
-.submit:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
+// .submit:hover {
+//   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+// }
 
 .link:hover {
   color: #FFF;
@@ -30,7 +39,6 @@
 .form-group > * {
   border-radius: 2px;
   border: 0px black solid;
-  width: 200px;
 }
 
 .form-control {

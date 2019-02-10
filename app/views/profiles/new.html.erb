@@ -8,7 +8,6 @@
         <%= f.input :age, collection: 18..60 %>
         <%= f.input :sexe, label: 'I am...', collection: ["a man", "a woman"], multi: false, creatable: true, size: 2, input_html: { class: "select" } %>
         <%= f.input :city, class: "title-label" %>
-        <%= f.input :role, label: 'Choose your role', collection: ["Governor", "Rhetor", "Wise", "Priest"], multi: false, creatable: true, size: 2, input_html: { class: "select" } %>
         <%= f.collection_select(:school_id, School.all, :id, :title) %>
         <%= f.button :submit, class: "btn btn-success" %>
       <% end %>

@@ -5,6 +5,7 @@
       <%= simple_form_for [@question, @response] do |f| %>
         <%= f.error_notification %>
         <%= f.input :description, class: "title-label" %>
+        <%= f.select :school_id, options_for_select(School.all.map{|s|[s.title, s.id]}) %>
         <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
     </div>
