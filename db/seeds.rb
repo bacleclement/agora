@@ -14,7 +14,6 @@ puts "Stoicism"
     description: "Stoicism is a school of Hellenistic philosophy founded by Zeno of Citium in Athens in the early 3rd century BC. It was heavily influenced by certain teachings of Socrates, while Stoic physics are largely drawn from the teachings of the philosopher Heraclitus. Stoicism is predominantly a philosophy of personal ethics informed by its system of logic and its views on the natural world. According to its teachings, as social beings, the path to happiness for humans is found in accepting the moment as it presents itself, by not allowing oneself to be controlled by the desire for pleasure or fear of pain, by using one’s mind to understand the world and to do one’s part in nature's plan, and by working together and treating others fairly and justly.",
     badge: "blabl",
     photo: "image",
-    position: 1,
     xp: 4567
   )
 
@@ -24,7 +23,6 @@ puts "Buddhism"
     description: "Buddhism is the world's fourth-largest religion with over 520 million followers, or over 7\% of the global population, known as Buddhists.[web 1][5] An Indian religion, Buddhism encompasses a variety of traditions, beliefs and spiritual practices largely based on original teachings attributed to the Buddha and resulting interpreted philosophies. Buddhism originated in ancient India as a Sramana tradition sometime between the 6th and 4th centuries BCE, spreading through much of Asia. Two major extant branches of Buddhism are generally recognized by scholars: Theravada (Pali: \"The School of the Elders\") and Mahayana (Sanskrit: \"The Great Vehicle\").",
     badge: "blabl",
     photo: "image",
-    position: 2,
     xp: 3456
   )
 
@@ -34,7 +32,6 @@ puts "Epicureanism"
     description: "Epicureanism is a system of philosophy based upon the teachings of the ancient Greek philosopher Epicurus, founded around 307 BC. Epicurus was an atomic materialist, following in the steps of Democritus. His materialism led him to a general attack on superstition and divine intervention. Following Aristippus—about whom very little is known—Epicurus believed that what he called \"pleasure\" (ἡδονή) was the greatest good, but that the way to attain such pleasure was to live modestly, to gain knowledge of the workings of the world, and to limit one's desires. This would lead one to attain a state of tranquility (ataraxia) and freedom from fear as well as an absence of bodily pain (aponia). The combination of these two states constitutes happiness in its highest form. Although Epicureanism is a form of hedonism insofar as it declares pleasure to be its sole intrinsic goal, the concept that the absence of pain and fear constitutes the greatest pleasure, and its advocacy of a simple life, make it very different from \"hedonism\" as colloquially understood.",
     badge: "blabl",
     photo: "image",
-    position: 3,
     xp: 2345
   )
 
@@ -44,7 +41,6 @@ puts "Lyceum"
     description: "The Lyceum had been used for philosophical debate long before Aristotle. Philosophers such as Prodicus of Ceos, Protagoras, and numerous rhapsodes had spoken there. The most famous philosophers to teach there were Isocrates, Plato (of The Academy), and the best-known Athenian teacher, Socrates.[4] In addition to military training and educational pursuits, the Lyceum also housed Athenian Assembly meetings before the Pnyx became the official meeting place in the 5th century BCE. Cult practices of various groups were also held at the Lyceum.",
     badge: "blabl",
     photo: "image",
-    position: 4,
     xp: 2134
   )
 
@@ -54,7 +50,6 @@ puts "Minimalism"
     description: "Minimalism isn\’t about any of those things, but it can help you accomplish them. If you desire to live with fewer material possessions, or not own a car or a television, or travel all over the world, then minimalism can lend a hand. But that’s not the point.",
     badge: "blabl",
     photo: "image",
-    position: 5,
     xp: 1235
   )
 

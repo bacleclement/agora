@@ -3,10 +3,11 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @categories = Category.all
+    @categories = policy_scope(Category)
   end
 
   def show
+    authorize @category
   end
 
   def new
@@ -15,6 +16,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(params_category)
+    authorize @category
     if @category.save
       redirect_to questions_path
     else
@@ -26,9 +28,11 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    authorize @category
   end
 
   def destroy
+    authorize @category
   end
 
   private

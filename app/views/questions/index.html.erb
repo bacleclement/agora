@@ -62,7 +62,7 @@
                   <%= response.upvote %>
                 </div>
                 <div class="response-delete">
-                  <% if response.profile.user_id == current_user.id %>
+                  <% if policy(response).destroy? %>
                     <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
                       <i class="fas fa-trash"></i>
                     <% end %>
@@ -85,7 +85,7 @@
                 <%= response.upvote %>
               </div>
               <div class="response-delete">
-                <% if response.profile.user_id == current_user.id %>
+                <% if policy(response).destroy? %>
                   <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
                       <i class="fas fa-trash"></i>
                     <% end %>

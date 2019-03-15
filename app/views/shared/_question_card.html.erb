@@ -9,7 +9,7 @@
     <div class="question-description">
       <p> <%= question.description %></p>
     </div>
-    <% if question.profile.user_id == current_user.id %>
+    <% if policy(question).destroy? %>
       <div class="question-delete">
         <%= link_to question_path(question), method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="fas fa-trash" style="color: grey;"></i>

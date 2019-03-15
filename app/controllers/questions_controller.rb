@@ -3,14 +3,16 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @categories = Category.all
-    @schools = School.all
-    @responses = Response.all
+    @categories = policy_scope(Category)
+    @schools = policy_scope(School)
+    @responses = policy_scope(Response)
+
     if params.has_key?(:category_id)
       @category_id = Category.find_by_id(params[:category_id])
       @questions = Question.where(category_id: @category_id)
     else
-      @questions = Question.all
+      @questions = policy_scope(Question)
+      # @questions = Question.all
     end
   end
 
@@ -19,6 +21,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    authorize @question
   end
 
   def upvote
@@ -27,6 +30,7 @@ class QuestionsController < ApplicationController
     # line below: find the profile of the owner of the question upvoted to add point to his XP.
     @profile = Profile.find(@question.profile_id)
     a = 0
+    authorize @question
     @question.users_array.each do |user_and_question|
       if user_and_question[0].to_i == @user.id && user_and_question[1].to_i == @question.id
         a += 1
@@ -51,6 +55,7 @@ class QuestionsController < ApplicationController
     @question.profile = @profile
     @question.upvote = 0
     @profile.xp += 100
+    authorize @question
     @profile.save!
     # when a user post a question, he give 100 points of xp to his school
     @school = School.find(@profile.school_id)
@@ -68,6 +73,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question.update(params_question)
+    authorize @question
     if @question.save
       redirect_to questions_path(@question)
     else
@@ -77,6 +83,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    authorize @question
     redirect_to questions_path
   end
 

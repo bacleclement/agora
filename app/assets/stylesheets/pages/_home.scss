@@ -15,6 +15,10 @@ h2 {
 .call-to-action {
   margin-bottom: 50px;
   margin-top: 30px;
+  background-color: $agora-color;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .stoic-description {
@@ -24,47 +28,8 @@ h2 {
 
 .school-details-title {
   margin-top: 60px;
-}
-
-.vl {
-  border-left: 4px solid black;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 10;
-}
-
-.path-section {
-  background-color: white;
-  position: relative;
-
-}
-
-.path-item-1 {
-  position: absolute;
-
-}
-
-.path-item-2 {
-  position: absolute;
-  bottom: -200px
-}
-
-.path-item-3 {
-  position: absolute;
-  bottom: -300px
-}
-
-// path section
-
-.path-section {
-  background-color: white;
-}
-
-.path-title {
-  margin-top: 60px;
-  margin-bottom: 50px;
+  font-size: 24px;
+  color: white;
 }
 
 .wrapper {
@@ -93,12 +58,6 @@ h2 {
   font-size: 14px;
 }
 
-.vertical-line {
-  width: 2px;
-  height: 100px;
-  background: $agora-color;
-  margin: 20px auto 0 auto;
-}
 
 hr {
   border: 0;

@@ -3,11 +3,9 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [ :show, :voted, :edit, :update, :destroy ]
 
   def index
-    profiles = Profile.all
+    # @profiles = Profile.all
+    @profiles = policy_scope(Profile)
   end
-
-  # def index_by_school
-  # end
 
   def show
     @questions = Question.where(profile_id: @profile.id)
@@ -16,6 +14,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    authorize @profile
   end
 
   # def voted(question)
@@ -28,6 +27,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(params_profile)
     @profile.user = @user
     @profile.grade = "citizen"
+    authorize @profile
     # when the user create his profile, he starts with 100xp (line below)
     @profile.xp = 100
     if @profile.save
@@ -62,5 +62,6 @@ class ProfilesController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:id])
+    authorize @profile
   end
 end
