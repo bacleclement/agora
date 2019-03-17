@@ -3,6 +3,8 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [ :show, :edit, :update, :destroy ]
 
   def show
+    @question = Question.find(params[:question_id])
+    @response = Response.new
     authorize @response
   end
 
@@ -32,9 +34,17 @@ class ResponsesController < ApplicationController
     @school.save!
 
     if @response.save!
-      redirect_to questions_path
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js  # <-- will render `app/views/response/create.js.erb`
+      end
+      # redirect_to questions_path
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'questions' }
+        format.js  # <-- idem
+      end
+      # render :new
     end
   end
 

@@ -12,35 +12,45 @@
 
 .response {
   padding: 20px;
-  width: 640px;
+  width: 840px;
   margin-top: 5px;
   margin-bottom: 15px;
   background: white;
-  border-radius: $border-radius-size + 5;
+  border-radius: $border-radius-size;
   position: relative;
-  box-shadow: -1px 15px 30px -12px black;
 }
 
-.response-upvote i {
-  color: grey;
+.response-upvote {
+  position: absolute;
+  display: flex;
+  right: 35px;
+  bottom: 5px;
+  & i {
+    color: $agora-color;
+    padding-right: 6px;
+  }
 }
 
 .response-delete {
   position: absolute;
   right: 15px;
-  bottom: 20px;
+  top: 5px;
   & i {color: grey;}
 }
 
 .response-owner-username {
   position: absolute;
   right: 65px;
-  bottom: 20px;
+  top: 5px;
+}
+
+.response-card-bottom {
+  height: 50px;
 }
 
 .line {
   border: 0.5px #f0f0f0 solid;
-  width: 620px;
+  width: 820px;
 }
 
 input#search-bar{
@@ -100,22 +110,23 @@ textarea#question_description.form-control.text.optional {
 .type {
   display: inline-block;
   padding: 20px;
-  color: white;
+  color: $agora-color;
   a {
-    color: white;
+    color: $agora-color;
   }
 }
 
 .active {
   background-color: $agora-color;
-  border-radius: $border-radius-size + 5;
-  box-shadow: -1px 15px 30px -12px black;
+  border-radius: 3px;
+  a {
+    color: white;
+  }
 }
 
 .btn-card {
   background-color: $agora-color;
-  border-radius: $border-radius-size + 5;
-  box-shadow: -1px 15px 30px -12px black;
+  border-radius: 3px;
   text-decoration: none !important;
   color: white;
   padding: 10px;

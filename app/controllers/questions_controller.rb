@@ -6,14 +6,14 @@ class QuestionsController < ApplicationController
     @categories = policy_scope(Category)
     @schools = policy_scope(School)
     @responses = policy_scope(Response)
-
+    @response = Response.new
     if params.has_key?(:category_id)
       @category_id = Category.find_by_id(params[:category_id])
       @questions = Question.where(category_id: @category_id)
     else
       @questions = policy_scope(Question)
-      # @questions = Question.all
     end
+
   end
 
   def show

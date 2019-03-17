@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.action_view.embed_authenticity_token_in_remote_forms = true
+
 module Agora
   class Application < Rails::Application
     config.generators do |generate|

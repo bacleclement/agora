@@ -1,0 +1,5 @@
+// 1 create html review
+var newResponse = "<p><%= @response.description %></p>";
+// 2 add this new response to the responses list
+var responses = document.getElementById('reponses');
+responses.insertAdjacentHTML('beforeend', newResponse);

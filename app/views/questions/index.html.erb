@@ -38,65 +38,46 @@
   <div class="row">
     <div class="col-md-2 col-md-offset-10 text-center">
       <%= link_to(schools_path) do %>
-        <p class="btn-card schools_path">See all schools</p>
+        <i class="fas fa-search-plus" style="color: #204E5F; padding: 20px; padding-left: 90px;"></i>
       <% end %>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row">s
     <% @questions.sort_by(&:created_at).reverse.each do |question| %>
       <div class="col-xs-12">
         <%= render "shared/question_card", question: question %>
+        <%= render 'responses/form', question: question, response: @response %>
+        <div id="responses">
         <% Response.where(question_id: question.id).sort_by(&:created_at).each do |response| %>
-          <% if response.id.odd? %>
-            <div class="col-xs-12 col-xs-offset-5">
-              <div class="response">
-                <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+            <div class="response">
+              <div class="response-card-top">
+                <p style="font-size: 10px; color: #204E5F;">Response. <%= School.find(response.school_id).title.capitalize %></p>
                 <p><%= response.description %></p>
                 <div class="line"></div>
+              </div>
+              <div class="response-card-bottom">
                 <div class="response-upvote">
                   <%= link_to (responses_upvote_path(response)), method: :post do %>
-                    <i class="fas fa-thumbs-up"></i>
+                    <i class="fas fa-heart"></i>
                   <% end %>
                   <%= response.upvote %>
                 </div>
                 <div class="response-delete">
                   <% if policy(response).destroy? %>
                     <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                <% end %>
+                        <i class="fas fa-times" style="color: #204E5F;"></i>
+                      <% end %>
+                  <% end %>
                 </div>
                 <div class="response-owner-username">
-                  <%= Profile.find(response.profile_id).username.capitalize %>
+                  By <%= Profile.find(response.profile_id).username.capitalize %>
                 </div>
               </div>
             </div>
-          <% else %>
-            <div class="response">
-              <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
-              <p><%= response.description %></p>
-              <div class="line"></div>
-              <div class="response-upvote">
-                <%= link_to (responses_upvote_path(response)), method: :post do %>
-                  <i class="fas fa-thumbs-up"></i>
-                <% end %>
-                <%= response.upvote %>
-              </div>
-              <div class="response-delete">
-                <% if policy(response).destroy? %>
-                  <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                <% end %>
-              </div>
-              <div class="response-owner-username">
-                <%= Profile.find(response.profile_id).username.capitalize %>
-              </div>
-            </div>
-          <% end %>
       <% end %>
+      </div>
       </div>
     <% end %>
   </div>

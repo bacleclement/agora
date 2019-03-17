@@ -52,7 +52,7 @@
           <% if response.id.odd? %>
             <div class="col-xs-12 col-xs-offset-5">
               <div class="response">
-                <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+                <p style="font-size: 10px; color: #204E5F;">Response. <%= School.find(response.school_id).title.capitalize %></p>
                 <p><%= response.description %></p>
                 <div class="line"></div>
                 <div class="response-upvote">
@@ -75,7 +75,7 @@
             </div>
           <% else %>
             <div class="response">
-              <p style="font-size: 10px; color: #EC9B3B;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+              <p style="font-size: 10px; color: #204E5F;">Response. <%= School.find(response.school_id).title.capitalize %></p>
               <p><%= response.description %></p>
               <div class="line"></div>
               <div class="response-upvote">

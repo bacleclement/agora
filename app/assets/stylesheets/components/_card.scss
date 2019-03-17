@@ -1,27 +1,3 @@
-.card {
-  background-color: white;
-  width: 200px;
-  height: 200px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
-  margin: 60px 0px;
-  display: flex;
-  position: relative;
-  margin-left: 90px;
-}
-
-.card-item {
-  position: absolute;
-  top: 40%;
-  margin: 8px;
-  color: black;
-  font-size: 14px;
-}
-
-.card:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
 
 // card form
 
@@ -53,7 +29,7 @@
   }
 }
 
-$border-radius-size: 14px;
+$border-radius-size: 3px;
 $barbarian: #EC9B3B;
 $archer: #EE5487;
 $giant: #F6901A;
@@ -66,38 +42,13 @@ $wizard: #4FACFF;
   height: 400px;
   // display: inline-block;
   margin: auto;
-  border-radius: $border-radius-size + 5;
+  // border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
   box-shadow: -1px 15px 30px -12px black;
   z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
-}
-
-.top-card {
-  position: absolute;
-  background-color: #EC9B3B;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  border-top-left-radius: $border-radius-size;
-  border-top-right-radius: $border-radius-size;
-  height: 80px;
-}
-
-.top-card-title {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  color: white;
-}
-
-.bottom-card {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 85px;
 }
 
 .profile-list {
@@ -114,23 +65,17 @@ $wizard: #4FACFF;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.big-card:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
 // new card --------------------------------------------------------------------------------------
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
 
-
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
+// *, *:before, *:after {
+//   box-sizing: border-box;
+// }
 
 body {
-  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
+  // background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  // background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9E9E9E;
@@ -144,7 +89,7 @@ body {
   border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
-  box-shadow: -1px 15px 30px -12px black;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -155,11 +100,10 @@ body {
   width: 400px;
   // display: inline-block;
   margin: auto;
-  border-radius: $border-radius-size + 5;
+  border-radius: $border-radius-size;
   position: relative;
   text-align: center;
-  box-shadow: -1px 15px 30px -12px black;
-  z-index: 9999;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
 }
@@ -172,130 +116,22 @@ body {
   border-top-right-radius: $border-radius-size;
 }
 
-.clash-card__image {
-  position: relative;
-  height: 230px;
-  margin-bottom: 35px;
-  border-top-left-radius: $border-radius-size;
-  border-top-right-radius: $border-radius-size;
-}
-
-.clash-card__image--barbarian {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
-  img {
-    width: 400px;
-    position: absolute;
-    top: -65px;
-    left: -70px;
-  }
-}
-
-.clash-card__image--archer {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg');
-  img {
-    width: 400px;
-    position: absolute;
-    top: -34px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--goblin {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
-  img {
-    width: 370px;
-    position: absolute;
-    top: -21px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--wizard {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
-  img {
-    width: 345px;
-    position: absolute;
-    top: -28px;
-    left: -10px;
-  }
-}
-
-.clash-card__level {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.clash-card__level--barbarian {
-  color: $barbarian;
-}
-
-.clash-card__level--archer {
-  color: $archer;
-}
-
-.clash-card__level--giant {
-  color: $giant;
-}
-
-.clash-card__level--goblin {
-  color: $goblin;
-}
-
-.clash-card__level--wizard {
-  color: $wizard;
-}
+// top part of the card = rename
 
 .clash-card__unit-name {
   font-size: 26px;
-  color: black;
+  color: $agora_color;
   font-weight: 900;
   margin-bottom: 5px;
 }
 
-.clash-card__unit-description {
-  padding: 20px;
-  margin-bottom: 10px;
-}
-
-.clash-card__unit-stats--barbarian {
-  background: $barbarian;
-
-  .one-third {
-     border-right: 1px solid #BD7C2F;
-  }
-}
+// bottom part of the card  = rename
 
 .clash-card__unit-stats--archer {
-  background: #EC9B3B;
+  background: $agora-color;
 
   .one-third {
-     border-right: 1px solid #D04976;
-  }
-}
-
-.clash-card__unit-stats--giant {
-  background: $giant;
-
-  .one-third {
-     border-right: 1px solid darken($giant, 8%);
-  }
-}
-
-.clash-card__unit-stats--goblin {
-  background: $goblin;
-
-  .one-third {
-     border-right: 1px solid darken($goblin, 6%);
-  }
-}
-
-.clash-card__unit-stats--wizard {
-  background: $wizard;
-
-  .one-third {
-     border-right: 1px solid darken($wizard, 6%);
+     border-right: 1px solid white;
   }
 }
 
@@ -330,60 +166,11 @@ body {
   width: 250px;
   // display: inline-block;
   margin: auto;
-  border-radius: $border-radius-size + 5;
+  border-radius: $border-radius-size;
   position: relative;
   text-align: center;
-  box-shadow: -1px 15px 30px -12px black;
   z-index: 9999;
   margin-top: 50px;
-}
-
-.clash-card__image-small {
-  position: relative;
-  height: 100px;
-  margin-bottom: 35px;
-  border-top-left-radius: $border-radius-size;
-  border-top-right-radius: $border-radius-size;
-}
-
-.clash-card__image--barbarian-small {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
-  img {
-    width: 200px;
-    position: absolute;
-    top: -65px;
-    left: -70px;
-  }
-}
-
-.clash-card__image--archer-small {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg');
-  img {
-    width: 200px;
-    position: absolute;
-    top: -34px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--goblin-small {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
-  img {
-    width: 200px;
-    position: absolute;
-    top: -21px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--wizard-small {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
-  img {
-    width: 200px;
-    position: absolute;
-    top: -28px;
-    left: -10px;
-  }
 }
 
 .clash-card__level {
@@ -399,9 +186,8 @@ body {
   background: white;
   height: auto;
   margin: auto;
-  border-radius: $border-radius-size + 5;
+  border-radius: $border-radius-size;
   position: relative;
-  box-shadow: -1px 15px 30px -12px black;
   z-index: 9999;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -410,7 +196,7 @@ body {
 
 .question-top-card {
   position: absolute;
-  background-color: #EC9B3B;
+  background-color: $agora-color;
   top: 0px;
   right: 0px;
   left: 0px;
@@ -430,7 +216,7 @@ body {
 .question-author {
   position: absolute;
   top: 5px;
-  right: 30px;
+  right: 70px;
   font-size: 12px;
   color: white;
 }
@@ -445,7 +231,7 @@ body {
 
 .question-delete {
   position: absolute;
-  top: 45px;
+  top: 5px;
   right: 20px;
   color: white;
   font-size: 16px;
@@ -478,8 +264,8 @@ body {
 
 .question-detail-item-2 {
   position: absolute;
-  right: 200px;
-  top: -10px;
+  right: 120px;
+  top: 0px;
 }
 
 .question-detail-item-3 {
