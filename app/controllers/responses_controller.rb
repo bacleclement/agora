@@ -4,7 +4,6 @@ class ResponsesController < ApplicationController
 
   def show
     @question = Question.find(params[:question_id])
-    @response = Response.new
     authorize @response
   end
 

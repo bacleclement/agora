@@ -1,0 +1,25 @@
+<div class="response">
+  <div class="response-card-top">
+    <p style="font-size: 10px; color: #204E5F;">Response. <%= School.find(response.school_id).title.capitalize %></p>
+    <p><%= response.description %></p>
+    <div class="line"></div>
+  </div>
+  <div class="response-card-bottom">
+    <div class="response-upvote">
+      <%= link_to (responses_upvote_path(response)), method: :post do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+      <%= response.upvote %>
+    </div>
+    <div class="response-delete">
+      <% if policy(response).destroy? %>
+        <%= link_to question_response_path(question, response), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-times" style="color: #204E5F;"></i>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="response-owner-username">
+      By <%= Profile.find(response.profile_id).username.capitalize %>
+    </div>
+  </div>
+</div>

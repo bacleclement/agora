@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :questions do
-    resources :responses, only: [ :new, :create, :edit, :update, :destroy ]
+    resources :responses, only: [ :new, :show, :create, :edit, :update, :destroy ]
   end
 
   post 'questions/upvote'

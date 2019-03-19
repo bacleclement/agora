@@ -1,5 +1,24 @@
-// 1 create html review
-var newResponse = "<p><%= @response.description %></p>";
-// 2 add this new response to the responses list
-var responses = document.getElementById('reponses');
-responses.insertAdjacentHTML('beforeend', newResponse);
+// // 1 create html review
+// // var newResponse = "<p><%= @response.description %></p>";
+// // 2 add this new response to the responses list
+// var responses = document.getElementById("responses");
+// responses.insertAdjacentHTML('beforeend', newResponse);
+
+
+function refreshForm(innerHTML) {
+  const newResponseForm = document.getElementById('new_response');
+  newResponseForm.innerHTML = innerHTML;
+}
+
+function addResponse(responseHTML) {
+  const responses = document.getElementById('responses');
+  responses.insertAdjacentHTML('beforeend', responseHTML);
+}
+
+<% if @response.errors.any? %>
+  refreshForm('<%= j render "responses/form", question: @question, response: @response %>');
+<% else %>
+  addResponse('<%= j render "responses/show", question: @question, response: @response %>');
+  refreshForm('<%= j render "responses/form", question: @question, response: @response %>');
+<% end %>
+
