@@ -19,9 +19,6 @@
   </div>
   <div class="question-bottom-card">
     <div class="question-detail">
-      <%= link_to(new_question_response_path(question)) do %>
-        <p class="post-question-btn">Post response</p>
-      <% end %>
       <div class="question-detail-item-1">
         <%= @responses.where(question_id: question.id).count %>
         <% if @responses.count <= 1 %>

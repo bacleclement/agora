@@ -73,7 +73,7 @@
 // response form
 
 .response-form {
-  background-color: #FFF;
+  background-color: #F0F0F0;
 }
 
 .simple_form.new_response {
@@ -83,7 +83,7 @@
 #response_school_id {
   display: inline !important;
   width: 160px;
-  margin-top: 28px;
+  margin-top: 18px;
   height: 38px;
   margin-left: 5px;
 }
@@ -91,6 +91,7 @@
 #response_description {
   resize: none;
   width: 580px;
+  height: 40px;
   min-height: 40px;
   padding: 5px;
   overflow: hidden;
@@ -102,6 +103,6 @@
 
 .btn.btn-submit-reponse {
   background-color: #204E5F;
-  margin-top: 28px;
+  margin-top: 18px;
   margin-left: 5px;
 }
