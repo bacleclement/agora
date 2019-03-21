@@ -1,6 +1,15 @@
-<%= simple_form_for [ question, @response ], remote: true do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :description, as: :text, label: false %>
-  <%= f.select :school_id, options_for_select(School.all.map{|s|[s.title, s.id]}) %>
-  <%= f.button :submit %>
-<% end %>
+<div class="response-form z-depth-1">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for [ question, @response ], remote: true do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description, as: :text, label: false %>
+        <%= f.select :school_id, options_for_select(School.all.map{|s|[s.title, s.id]}) %>
+        <%= f.button :submit, class: "btn-submit-reponse" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

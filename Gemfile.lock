@@ -81,6 +81,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    materialize-sass (1.0.0)
+      autoprefixer-rails (>= 6.0.3)
     method_source (0.9.1)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
@@ -200,6 +202,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  materialize-sass
   pg (~> 0.21)
   pry-byebug
   pry-rails

@@ -42,7 +42,7 @@
 }
 
 .form-control {
-  margin-left: 100px;
+  // margin-left: 100px;
 }
 
 .form-check {
@@ -68,4 +68,40 @@
 .profile-form {
   width: 300px;
   height: 900px;
+}
+
+// response form
+
+.response-form {
+  background-color: #FFF;
+}
+
+.simple_form.new_response {
+  display: flex;
+}
+
+#response_school_id {
+  display: inline !important;
+  width: 160px;
+  margin-top: 28px;
+  height: 38px;
+  margin-left: 5px;
+}
+
+#response_description {
+  resize: none;
+  width: 580px;
+  min-height: 40px;
+  padding: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 15px;
+  border: 0.5px solid #f0f0f0;
+  border-radius: 20px;
+}
+
+.btn.btn-submit-reponse {
+  background-color: #204E5F;
+  margin-top: 28px;
+  margin-left: 5px;
 }
