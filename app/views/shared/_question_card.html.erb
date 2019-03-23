@@ -11,7 +11,7 @@
     </div>
     <% if policy(question).destroy? %>
       <div class="question-delete">
-        <%= link_to question_path(question), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to question_path(question), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do %>
         <i class="fas fa-times" style="color: white;"></i>
         <% end %>
       </div>

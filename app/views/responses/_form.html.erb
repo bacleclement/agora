@@ -4,7 +4,7 @@
       <%= simple_form_for [ question, @response ], remote: true do |f| %>
         <%= f.error_notification %>
         <%= f.input :description, as: :text, label: false %>
-        <%= f.select :school_id, options_for_select(School.all.map{|s|[s.title, s.id]}), class: "input-field col s12" %>
+        <%= f.select :school_id, options_for_select(School.all.map{|s|[s.title, s.id]}), :input_html => { :class => "inputfield"} %>
         <%= button_tag(type: 'submit', class: "btn btn-submit-reponse") do %>
           <i class="material-icons right"></i> Add response
         <% end %>

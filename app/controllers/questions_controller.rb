@@ -84,7 +84,10 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     authorize @question
-    redirect_to questions_path
+    respond_to do |format|
+      format.html { redirect_to questions_path }
+      format.js
+    end
   end
 
   private

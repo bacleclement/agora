@@ -46,13 +46,15 @@
 <div class="container">
   <div class="row">
     <% @questions.sort_by(&:created_at).reverse.each do |question| %>
-      <div class="col-xs-12">
-        <%= render "shared/question_card", question: question %>
-        <%= render 'responses/form', question: question, response: @response %>
-        <div id="responses">
-        <% Response.where(question_id: question.id).sort_by(&:created_at).each do |response| %>
-          <%= render "responses/show", question: question, response: response %>
-          <% end %>
+      <div id="question-<%= question.id %>">
+        <div class="col-xs-12">
+          <%= render "shared/question_card", question: question %>
+          <%= render 'responses/form', question: question, response: @response %>
+          <div id="responses">
+          <% Response.where(question_id: question.id).sort_by(&:created_at).each do |response| %>
+            <%= render "responses/show", question: question, response: response %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
